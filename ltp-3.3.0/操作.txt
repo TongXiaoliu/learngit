@@ -1,0 +1,8 @@
+HIT-ltp操作说明：
+1.cd ltp-3.3.0
+2../configure #运行configure
+3.make
+4../bin/ltp_test #分词、词性外部词典
+5.vim lx.txt
+6../tools/train/otcws test --model ltp_data/cws.model --input lx.txt >lx.cws #分词模型进行分词
+6../tools/train/otpos test --model ltp_data/pos.model --input cs.out >cs.pos #进行词性标注，生成词性标注好的文件，输入的是上一步分好词的文件
